@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const register = async (email: string, password: string, name?: string) => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/register', { email, password, name });
+    const response = await axios.post('http://localhost:8080/auth/register', { email, password, name });
     return response;
   } catch (error) {
     console.error(error);
@@ -12,7 +12,7 @@ export const register = async (email: string, password: string, name?: string) =
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+    const response = await axios.post('http://localhost:8080/auth/login', { email, password });
     return response;
   } catch (error) {
     console.error((error as any).response.data);
@@ -22,7 +22,7 @@ export const login = async (email: string, password: string) => {
 
 export const logout = async () => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/logout');
+    const response = await axios.post('http://localhost:8080/auth/logout');
     return response;
   } catch (error) {
     console.error(error);
@@ -32,7 +32,7 @@ export const logout = async () => {
 
 export const resetPassword = async (email: string) => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/resetPassword', { email });
+    const response = await axios.post('http://localhost:8080/auth/resetPassword', { email });
     return response;
   } catch (error) {
     console.error(error);
@@ -42,7 +42,7 @@ export const resetPassword = async (email: string) => {
 
 export const updatePasswordWithToken = async (email: string, newPassword: string, resetToken: string) => {
   try {
-    const response = await axios.post('http://localhost:3000/auth/updatePasswordWithToken', { email, newPassword, resetToken });
+    const response = await axios.post('http://localhost:8080/auth/updatePasswordWithToken', { email, newPassword, resetToken });
     return response;
   } catch (error) {
     console.error(error);
