@@ -4,7 +4,7 @@ import LoginForm from './components/LoginForm';
 import LogoutButton from './components/LogoutButton';
 import RegisterForm from './components/RegisterForm';
 import Navbar from './components/Navbar';
-import Home from './components/Home'; // Import the Home component
+import Home from './components/Home'; 
 import ResetPassword from './components/ResetPassword';
 import UpdatePassword from './components/UpdatePassword';
 
