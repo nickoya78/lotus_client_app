@@ -17,7 +17,13 @@ export const login = async (email: string, password: string) => {
     const response = await axios.post(`${apiUrl}/auth/login`, { email, password });
     return response;
   } catch (error) {
-    console.error((error as any).response.data);
+    if (axios.isAxiosError(error) && error.response) {
+      if (error.response.status === 500 && error.response.data.error === 'Invalid password') {
+        throw new Error('Invalid password');
+      } else {
+        console.error(error.response.data);
+      }
+    }
     throw error;
   }
 };
