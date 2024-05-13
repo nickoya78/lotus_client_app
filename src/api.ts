@@ -20,6 +20,8 @@ export const login = async (email: string, password: string) => {
     if (axios.isAxiosError(error) && error.response) {
       if (error.response.status === 500 && error.response.data.error === 'Invalid password') {
         throw new Error('Invalid password');
+      } else if (error.response.data.error === 'User not found') {
+        throw new Error('User not found');
       } else {
         console.error(error.response.data);
       }
@@ -27,6 +29,8 @@ export const login = async (email: string, password: string) => {
     throw error;
   }
 };
+
+
 
 export const logout = async () => {
   try {
