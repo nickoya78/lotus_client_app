@@ -30,10 +30,7 @@ const Home: React.FC = () => {
       <p style={{ fontSize: '1.5em' }}>Enjoy your stay.</p>
       <style>
       {`
-         @media only screen 
-           and (min-device-width: 360px) 
-           and (max-device-width: 667px) 
-           and (-webkit-min-device-pixel-ratio: 2) { 
+          @media only screen and (max-width: 768px) {
            h1 {
             font-size: 1.5em;
           }

@@ -36,10 +36,7 @@ const Navigation: React.FC = () => {
       </Navbar>
       <style>
       {`
-          @media only screen 
-            and (min-device-width: 360px) 
-            and (max-device-width: 667px) 
-            and (-webkit-min-device-pixel-ratio: 2) { 
+           @media only screen and (max-width: 768px) {
             .navbar {
               flex-direction: column;
             }
