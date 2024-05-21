@@ -20,7 +20,7 @@ useEffect(() => {
 const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
   if (!email || !password || !name ) {
-    return; // Don't submit the form if either field is empty
+    return; 
   }
   try {
     const response = await register(email, password, name); // Add an empty string as the third argument
